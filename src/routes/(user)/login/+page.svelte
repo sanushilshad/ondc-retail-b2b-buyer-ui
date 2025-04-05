@@ -1,9 +1,8 @@
 
 <script lang="ts">
-  import { CircleDollarSign, Check, Search } from 'lucide-react';
   import { Segment } from '@skeletonlabs/skeleton-svelte';
-  import Lightswitch from '$lib/DarkLightMode.svelte';
-  import { fade, fly } from 'svelte/transition';
+  import LightSwitch from '$lib/DarkLightMode.svelte';
+    import Footer from '$lib/FooterOne.svelte';
   let selected: string = $state('password');
   
 
@@ -18,17 +17,16 @@
   }
 
 
-
-
 </style>
-
- <div class="flex flex-col justify-center min-h-screen animate-fade-in">
+<!-- <body class="bg-surface-200-800"> -->
+ <div class="flex flex-col justify-center min-h-screen animate-fade-in mx-4">
   <form class="w-full space-y-8 py-3"  >
     <div class="flex justify-center items-center flex-grow">
-      <div class="bg-surface p-6 rounded-lg shadow-xl w-120">
+      <div class="bg-surface-100-800 p-6 rounded-lg shadow shadow-surface-500 w-120">
         <div class="py-3 px-6 text-center">
-          <h1 class="text-xl font-medium text-foreground">Welcome Back <Lightswitch /></h1>
-          <p class="mt-2 text-sm text-muted-foreground">Sign in to your Account</p>
+          <h1 class="text-xl font-medium text-foreground">Welcome Back
+             <LightSwitch /></h1>
+          <p class="text-sm text-muted-foreground">Sign in to your Account</p>
         </div>
         <div class="mb-2">
           <label for="emailOrMobile" class="form-label">
@@ -60,40 +58,44 @@
             />
           </div>
         {:else}
-          <div class="grid grid-cols-12 gap-2 items-center">
-            <label for="otp" class="col-span-12 form-label">OTP</label>
-            <input
-              id="otp"
-              class="col-span-9 ig-input rounded py-3 preset-outlined-surface-200-800"
-              placeholder="Enter OTP"
-              type="number"
-            />
-            <button class="col-span-3 py-3 bg-primary hover:bg-surface-variant text-foreground px-4 py-2 rounded bg-surface-50 text-surface-contrast-50 transition ease-in-out duration-200 hover:brightness-90 hover:scale-101">
-              Send OTP
-            </button>
-          </div>
+<div class="flex flex-col gap-2 ">
+  <label for="otp" class="form-label ">OTP</label>
+  <div class="flex gap-2 items-center">
+    <input
+      id="otp"
+      class="w-3/4 h-13 ig-input rounded px-4 preset-outlined-surface-200-800"
+      placeholder="Enter OTP"
+      type="number"
+    />
+    <button class="w-1/4 h-13 bg-primary-950-50 text-primary-50-950  px-4 rounded  whitespace-nowrap flex items-center justify-center  transition ease-in-out duration-200  hover:bg-surface-500">
+      Send OTP
+    </button>
+  </div>
+</div>
         {/if}
 
-        <div class="flex space-x-2 mt-5">
-          <button type="submit" class="flex-grow ig-input bg-primary rounded py-3  dark:bg-surface-50 bg-surface-900 dark:text-surface-contrast-50 text-surface-contrast-900 transition ease-in-out duration-200 hover:brightness-70 hover:scale-101">
+        <div class="flex space-x-2 mt-5 ">
+          <button type="submit" class="flex-grow ig-input rounded py-3 bg-primary-950-50 text-primary-50-950  transition ease-in-out duration-200  hover:bg-surface-500">
             Login
           </button>
         </div>
 
-        <div class="flex justify-center items-center space-x-2 ">
+        <div class="flex justify-center items-center space-x-2">
           <p class="text-center mt-7">
             Don't have an account?
-            <a href="/register" class="text-primaryfont-medium dark:hover:brightness-110 hover:brightness-10"><b>Register Now</b></a>
+            <a href="/register" class="text-primary-950-50 hover:brightness-10"><b>Register Now</b></a>
           </p>
         </div>
       </div>
     </div>
-
-    <div class="text-center text-muted-foreground">
+    <Footer/>
+    <!-- <div class="text-center text-muted-foreground">
       <p>© 2025 PlaceOrder B2B Buyer Portal</p>
       <p class="mt-1">Powered by Ultranet Private Limited</p>
-    </div>
+    </div> -->
   </form>
 </div>
+<!-- </body> -->
+
 
 

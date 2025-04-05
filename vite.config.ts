@@ -11,5 +11,12 @@ export default defineConfig({
 			project: './project.inlang',
 			outdir: './src/lib/paraglide'
 		})
-	]
+	],
+	server: {
+		port: 8002, // Change the port number here
+		host: '0.0.0.0', // Allows external access
+		allowedHosts: ['devtest2.rapidor.co'], // Allow this domain
+		strictPort: true, // Ensure Vite doesn't switch ports
+
+	},
 });
