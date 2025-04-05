@@ -20,23 +20,24 @@
 </style>
 <!-- <body class="bg-surface-200-800"> -->
  <div class="flex flex-col justify-center min-h-screen animate-fade-in mx-4">
-  <form class="w-full space-y-8 py-3"  >
+  <form class="w-full space-y-8 py-3" >
     <div class="flex justify-center items-center flex-grow">
-      <div class="bg-surface-100-800 p-6 rounded-lg shadow shadow-surface-500 w-120">
+      <div class="p-6 rounded-lg shadow shadow-surface-500 w-120">
         <div class="py-3 px-6 text-center">
-          <h1 class="text-xl font-medium text-foreground">Welcome Back
-             <LightSwitch /></h1>
-          <p class="text-sm text-muted-foreground">Sign in to your Account</p>
+          <LightSwitch />
+          <h1 class="text-xl font-medium">Welcome Back
+             </h1>
+          <p class="text-sm">Sign in to your Account</p>
         </div>
         <div class="mb-2">
-          <label for="emailOrMobile" class="form-label">
+          <label for="username" class="form-label">
             {selected == "password" ? "Email or Mobile Number" : "Mobile Number"}
           </label>
           <input
-            id="emailOrMobile"
-            class="ig-input rounded py-3 preset-outlined-surface-200-800"
+            id="username"
+            class="ig-input rounded py-3 preset-outlined-preset-outlined-surface-300-700"
             placeholder={selected == "password" ? "Enter Email or Mobile Number" : "Enter Mobile Number"}
-            type={selected == "password" ? "text" : "number"}
+            type={selected == "password" ? "text" : "tel"}
           />
         </div>
 
@@ -52,7 +53,7 @@
             <label for="password" class="form-label">Password</label>
             <input
               id="password"
-              class="ig-input rounded py-3 preset-outlined-surface-200-800"
+              class="ig-input rounded py-3 preset-outlined-surface-300-700"
               placeholder="Enter your password"
               type="text"
             />
@@ -63,7 +64,7 @@
   <div class="flex gap-2 items-center">
     <input
       id="otp"
-      class="w-3/4 h-13 ig-input rounded px-4 preset-outlined-surface-200-800"
+      class="w-3/4 h-13 ig-input rounded px-4 preset-outlined-surface-300-700"
       placeholder="Enter OTP"
       type="number"
     />
@@ -89,13 +90,8 @@
       </div>
     </div>
     <Footer/>
-    <!-- <div class="text-center text-muted-foreground">
-      <p>© 2025 PlaceOrder B2B Buyer Portal</p>
-      <p class="mt-1">Powered by Ultranet Private Limited</p>
-    </div> -->
   </form>
 </div>
-<!-- </body> -->
 
 
 

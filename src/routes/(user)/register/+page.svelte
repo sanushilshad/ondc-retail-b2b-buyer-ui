@@ -37,7 +37,7 @@
           </label>
           <input
             id="full_name"
-            class="ig-input rounded py-3 preset-outlined-surface-200-800"
+            class="ig-input rounded py-3 preset-outlined-surface-300-700"
             placeholder="Enter your full name"
             type="text"
           />
@@ -48,7 +48,7 @@
           <div class="flex gap-2 items-center">
             <input
               id="international_dialing_code"
-              class="w-1/4 h-13 ig-input rounded px-4 preset-outlined-surface-200-800"
+              class="w-1/4 h-13 ig-input rounded px-4 preset-outlined-surface-300-700"
               placeholder="Enter OTP"
               type="tel"
               value="+91"
@@ -56,7 +56,7 @@
             />
             <input
               id="mobile_no"
-              class="w-3/4 h-13 ig-input rounded px-4 preset-outlined-surface-200-800"
+              class="w-3/4 h-13 ig-input rounded px-4 preset-outlined-surface-300-700"
               placeholder="10 digit mobile no"
               type="tel"
             />
@@ -68,7 +68,7 @@
           </label>
           <input
             id="email"
-            class="ig-input rounded py-3 preset-outlined-surface-200-800"
+            class="ig-input rounded py-3 preset-outlined-surface-300-700"
             placeholder="Enter your email address"
             type="email"
           />
@@ -80,7 +80,7 @@
           <div class="relative">
             <input
               id="password"
-              class="ig-input rounded py-3 preset-outlined-surface-200-800 w-full pr-10"
+              class="ig-input rounded py-3 preset-outlined-surface-300-700 w-full pr-10"
               placeholder="Create a secure password"
         
               type={showPassword ? "text" : "password"}
@@ -118,10 +118,6 @@
       </div>
     </div>
     <Footer/>
-    <!-- <div class="text-center text-muted-foreground">
-      <p>© 2025 PlaceOrder B2B Buyer Portal</p>
-      <p class="mt-1">Powered by Ultranet Private Limited</p>
-    </div> -->
   </form>
 </div>
 
