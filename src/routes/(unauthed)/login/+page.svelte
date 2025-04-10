@@ -1,12 +1,18 @@
 
 <script lang="ts">
+  import { Segment } from '@skeletonlabs/skeleton-svelte';
   import LightSwitch from '$lib/DarkLightMode.svelte';
   import EyeIcon from '@lucide/svelte/icons/eye';
   import EyeOffIcon from '@lucide/svelte/icons/eye-off';
   import Footer from '$lib/FooterOne.svelte';
   let showPassword: boolean = $state(false);
+  let selected: string = $state('password');
   
-
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  //   // goto('/dashboard');
+  //  window.location.href = '/dashboard';
+  // }
 </script>
 <style>
     @keyframes fadeIn {
@@ -17,63 +23,39 @@
     animation: fadeIn 0.5s ease-in forwards;
   }
 
-
-
-
 </style>
-
+<!-- <body class="bg-surface-200-800"> -->
  <div class="flex flex-col justify-center min-h-screen animate-fade-in mx-4">
-  <form class="w-full space-y-8 py-3"  >
+  <form action="/dashboard" class="w-full space-y-8 py-3" >
     <div class="flex justify-center items-center flex-grow">
-      <div class="bg-surface-50-900 p-6 rounded-lg shadow shadow-surface-500 w-120">
+      <div class="p-6 rounded-lg shadow shadow-surface-500 w-120">
         <div class="py-3 px-6 text-center">
-          <h1 class="text-xl font-medium text-foreground">Create Account
-             <LightSwitch /></h1>
-          <p class="text-sm text-muted-foreground">Join the PlaceOrder</p>
+          <LightSwitch />
+          <h1 class="text-xl font-medium">Welcome Back
+             </h1>
+          <p class="text-sm">Sign in to your Account</p>
         </div>
         <div class="mb-2">
-          <label for="full_name" class="form-label">
-            Full Name
+          <label for="username" class="form-label">
+            {selected == "password" ? "Email or Mobile Number" : "Mobile Number"}
           </label>
           <input
-            id="full_name"
+            id="username"
             class="ig-input rounded py-3 preset-outlined-surface-300-700"
-            placeholder="Enter your full name"
-            type="text"
+            placeholder={selected == "password" ? "Enter Email or Mobile Number" : "Enter Mobile Number"}
+            type={selected == "password" ? "text" : "tel"}
+            required
           />
         </div>
 
-        <div class="flex flex-col gap-2 ">
-          <label for="international_dialing_code" class="form-label ">Mobile No</label>
-          <div class="flex gap-2 items-center">
-            <input
-              id="international_dialing_code"
-              class="w-1/4 h-13 ig-input rounded px-4 preset-outlined-surface-300-700"
-              placeholder="Enter OTP"
-              type="tel"
-              value="+91"
-              readonly
-            />
-            <input
-              id="mobile_no"
-              class="w-3/4 h-13 ig-input rounded px-4 preset-outlined-surface-300-700"
-              placeholder="10 digit mobile no"
-              type="tel"
-            />
-          </div>
-        </div>
-        <div class="mb-2">
-          <label for="email" class="form-label">
-           Email Address
-          </label>
-          <input
-            id="email"
-            class="ig-input rounded py-3 preset-outlined-surface-300-700"
-            placeholder="Enter your email address"
-            type="email"
-          />
+        <div class="flex space-x-4 py-1">
+          <Segment name="size" value={selected} onValueChange={(e) => (selected = e.value || "password")}>
+            <Segment.Item value="otp">OTP</Segment.Item>
+            <Segment.Item value="password">Password</Segment.Item>
+          </Segment>
         </div>
 
+        {#if selected == "password"}
         <div class="mb-2">
           <label for="password" class="form-label">Password</label>
           
@@ -100,19 +82,34 @@
             </button>
           </div>
         </div>
-
-
+        {:else}
+<div class="flex flex-col gap-2 ">
+  <label for="otp" class="form-label ">OTP</label>
+  <div class="flex gap-2 items-center">
+    <input
+      id="otp"
+      class="w-3/4 h-13 ig-input rounded px-4 preset-outlined-surface-300-700"
+      placeholder="Enter OTP"
+      type="number"
+      required
+    />
+    <button class="w-1/4 h-13 bg-primary-950-50 text-primary-50-950  px-4 rounded  whitespace-nowrap flex items-center justify-center  transition ease-in-out duration-200  hover:bg-surface-500">
+      Send OTP
+    </button>
+  </div>
+</div>
+        {/if}
 
         <div class="flex space-x-2 mt-5 ">
           <button type="submit" class="flex-grow ig-input rounded py-3 bg-primary-950-50 text-primary-50-950  transition ease-in-out duration-200  hover:bg-surface-500">
-            Register
+            Login
           </button>
         </div>
 
         <div class="flex justify-center items-center space-x-2">
           <p class="text-center mt-7">
-            Already have an account?
-            <a href="/login" class="text-primary-950-50 hover:brightness-10"><b> Login Now</b></a>
+            Don't have an account?
+            <a href="/register" class="text-primary-950-50 hover:brightness-10"><b>Register Now</b></a>
           </p>
         </div>
       </div>
@@ -120,5 +117,6 @@
     <Footer/>
   </form>
 </div>
+
 
 
