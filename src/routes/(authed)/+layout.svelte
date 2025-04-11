@@ -7,7 +7,7 @@ import {
   EllipsisVertical as Ellipsis,
   CircleGauge as Gauge,
   ShoppingBag as Bag,
-  BookOpen as Book,
+  FileText,
   User,
   Factory,
   Search,
@@ -115,7 +115,7 @@ import {
                 {#snippet tiles()}
                   <Navigation.Tile id="dashboard" label="Dashboard" labelExpanded="Dashboard"  href="/dashboard"><Gauge /></Navigation.Tile>
                   <Navigation.Tile id="product_search" label="Product"  labelExpanded="Product"  href="/product"><Search /></Navigation.Tile>
-                  <Navigation.Tile id="quotation"   label="Quotation"  labelExpanded="Quotation"  href="/quotation"><Book /></Navigation.Tile>
+                  <Navigation.Tile id="quotation"   label="Quotation"  labelExpanded="Quotation"  href="/quotation"><FileText /></Navigation.Tile>
                   <Navigation.Tile id="order" label="Order"  labelExpanded="Order"  href="/order"><Bag /></Navigation.Tile>
                   <Navigation.Tile id="business_account" label="Business"  labelExpanded="Business"  href="/business"><Factory /></Navigation.Tile>
                   <Navigation.Tile id="user_account" label="User"  labelExpanded="User" href="/user"><User /></Navigation.Tile>
@@ -140,7 +140,7 @@ import {
       <Navigation.Bar {value}  base="flex sticky bottom-0 w-full overflow-x-auto " onValueChange={(newValue) => (value = newValue !== "more" ? newValue : value )}>
         <Navigation.Tile  id="dashboard" label="Dashboard" href="/dashboard"><Gauge /></Navigation.Tile>
         <Navigation.Tile id="product_search" label="Product"   href="/product"><Search /></Navigation.Tile>
-        <Navigation.Tile id="quotation"   label="Quotation"  href="/quotation"><Book /></Navigation.Tile>
+        <Navigation.Tile id="quotation"   label="Quotation"  href="/quotation"><FileText /></Navigation.Tile>
         <Navigation.Tile id="order" label="Order"  href="/order"><Bag /></Navigation.Tile>
         <Navigation.Tile id="business_account" label="Business"  href="/business"><Factory /></Navigation.Tile>
         <Navigation.Tile id="user_account" label="User"  href="/user"><User /></Navigation.Tile>
