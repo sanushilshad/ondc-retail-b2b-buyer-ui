@@ -17,6 +17,11 @@
 
 		%sveltekit.head%
 	</head>
+	<script>
+		// Set the initial mode on page load.
+		const mode = localStorage.getItem('mode') || 'light';
+		document.documentElement.setAttribute('data-mode', mode);
+	</script>
 	<body data-sveltekit-preload-data="hover" class="bg-surface-100-900">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
